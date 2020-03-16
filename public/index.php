@@ -1,9 +1,9 @@
 <?php 
 
-$query = rtrim($_SERVER['QUERY_STRING'], '/');
+$query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
 
-require '../vendor/core/Router.php';
-require '../vendor/libs/functions.php';
+require '../vendor/core/Router.php';//подключаем класс Router
+require '../vendor/libs/functions.php';//подключаем библиотеку функций
 
 Router::add('posts/add', ['controller' => 'Posts', 'action' => 'add']);
 Router::add('posts', ['controller' => 'Posts', 'action' => 'index']);
