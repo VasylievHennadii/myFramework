@@ -80,6 +80,12 @@
            $controller = self::upperCamelCase(self::$route['controller']);           
            if(class_exists($controller)) {
                $cObj = new $controller;
+               $action = self::lowerCamelCase(self::$route['action']) . 'Action';     
+               if(method_exists($cObj, $action)) {
+                   $cObj->$action();
+               }else{
+                echo "Метод <b>$controller::$action</b> не найден";
+               }
            }else{
                echo "Контроллер <b>$controller</b> не найден";
            }
@@ -89,12 +95,22 @@
         }
     }
 
+    /**
+     * из вида page-news делает вид PageNews
+     */
     protected static function upperCamelCase($name) {
         // $name = str_replace('-', ' ', $name);//заменяем '-' на ' ' в переменной $name
         // $name = ucwords($name);//делает первую букву строки заглавной
         // $name = str_replace(' ', '', $name);//заменяем ' ' на '' в переменной $name
 
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));      
+    }
+
+    /**
+     * из вида PageNews делает вид pageNews
+     */
+    protected static function lowerCamelCase($name) {
+        return lcfirst(self::upperCamelCase($name));      
     }
 
 
