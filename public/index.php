@@ -6,6 +6,7 @@ require '../vendor/core/Router.php';//подключаем класс Router
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
 require '../app/controllers/Main.php';
 require '../app/controllers/Posts.php';
+require '../app/controllers/PostsNew.php';
 
 // правила по умолчанию, которые обслуживают всю маршрутизацию фреймворка. Работают с регулярными выражениями
 // 1 правило провалидирует пустую строку(т.е. домен нашего сайта) и отработает контроллер и действия по умолчанию

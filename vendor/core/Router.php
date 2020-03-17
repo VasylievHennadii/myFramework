@@ -70,11 +70,16 @@
         return false;
     }
 
+    /**
+     * перенаправляет URL по корректному маршруту
+     * @param string $url входящий URL
+     * @return void ничего не возвращает
+     */
     public static function dispatch($url) {
         if(self::matchRoute($url)) {
-           $controller = self::$route['controller'];
+           $controller = self::upperCamelCase(self::$route['controller']);           
            if(class_exists($controller)) {
-               echo 'ok';
+               $cObj = new $controller;
            }else{
                echo "Контроллер <b>$controller</b> не найден";
            }
@@ -82,6 +87,14 @@
             http_response_code(404);
             include '404.html';
         }
+    }
+
+    protected static function upperCamelCase($name) {
+        // $name = str_replace('-', ' ', $name);//заменяем '-' на ' ' в переменной $name
+        // $name = ucwords($name);//делает первую букву строки заглавной
+        // $name = str_replace(' ', '', $name);//заменяем ' ' на '' в переменной $name
+
+        return str_replace(' ', '', ucwords(str_replace('-', ' ', $name)));      
     }
 
 
