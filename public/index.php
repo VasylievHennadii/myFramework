@@ -21,7 +21,7 @@ spl_autoload_register(function($class){
 
 
 //my routs
-Router::add('^pages/?(?P<action>[a-z-]+)?$', ['controller' => 'Posts']);
+Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
 
 //default routs
 // правила по умолчанию, которые обслуживают всю маршрутизацию фреймворка. Работают с регулярными выражениями
