@@ -32,6 +32,15 @@ class View {
         $this->view = $view;
     }
 
+    public function render() {
+        $file_view = APP . "/views/{$this->route['controller']}/{$this->view}.php";
+        if(is_file($file_view)){
+            require $file_view;
+        }else{
+            echo "<p>Не найден вид<b>{$file_view}</b></p>";
+        }
+    }
+
 }
 
 
