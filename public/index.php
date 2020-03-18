@@ -1,4 +1,5 @@
 <?php
+error_reporting(-1);
 
 use vendor\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
 
@@ -9,7 +10,6 @@ define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
-// require '../vendor/core/Router.php';//подключаем класс Router
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
 
 spl_autoload_register(function($class){
