@@ -3,10 +3,10 @@
 namespace vendor\core\base;
 
 /**
- * Description of Controller
+ * Description of View
  * 
  */
-abstract class Controller {
+class View {
 
     /**
      * текущий маршрут и параметры (controller, action, params)
@@ -15,20 +15,18 @@ abstract class Controller {
     public $route = [];
 
     /**
-     * вид
+     * текущий вид
      * @var string
      */
     public $view;
 
-    public function __construct($route) {
-        $this->route = $route;
-    }
+    /**
+     * текущий шаблон
+     * @var string
+     */
+    public $layout;
 
 }
- 
-
-
-
 
 
 

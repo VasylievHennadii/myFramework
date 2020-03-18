@@ -79,8 +79,7 @@ namespace vendor\core;
      * @return void ничего не возвращает
      */
     public static function dispatch($url) {
-        $url = self::removeQueryString($url);
-        var_dump($url);
+        $url = self::removeQueryString($url);      
         if(self::matchRoute($url)) {
            $controller = 'app\controllers\\' . self::$route['controller'];                  
            if(class_exists($controller)) {
@@ -128,7 +127,8 @@ namespace vendor\core;
      * метод обрезает возможные get-параметры
      * возвращает только неявные get-параметры, обрезая явные
      * posts-new/test/?page=2&var1=1&var2=2 вернет posts-new/test
-     * 
+     * @param string $url запрос URL
+     * @return string     
      */
     protected static function removeQueryString($url) {
         if($url){

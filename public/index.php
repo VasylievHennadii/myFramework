@@ -11,7 +11,6 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
-debug($_GET);
 
 spl_autoload_register(function($class){
     $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
@@ -33,8 +32,6 @@ Router::add('^$', ['controller' => 'Main', 'action' => 'index']);
 // 2 правило должно валидировать все остальные url адреса вида controller/action -> posts/index или pages/view/about
 // где about - параметр в action view
 Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
-
-debug(Router::getRoutes());
 
 Router::dispatch($query);
 
