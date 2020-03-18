@@ -34,10 +34,19 @@ class View {
 
     public function render() {
         $file_view = APP . "/views/{$this->route['controller']}/{$this->view}.php";
+        ob_start();//функция буферизации
         if(is_file($file_view)){           
             require $file_view;
         }else{
-            echo "<p>Не найден вид<b>{$file_view}</b></p>";
+            echo "<p>Не найден вид<b>$file_view</b></p>";
+        }
+        $content = ob_get_clean();//очищает буфер обмена и складывает в $content   
+        
+        $file_layout = APP . "/views/layouts/{$this->layout}.php";//подключение шаблона
+        if(is_file($file_layout)){           
+            require $file_layout;
+        }else{
+            echo "<p>Не найден шаблон<b>$file_layout</b></p>";
         }
     }
 
