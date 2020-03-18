@@ -11,6 +11,7 @@ define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
+debug($_GET);
 
 spl_autoload_register(function($class){
     $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
@@ -18,7 +19,6 @@ spl_autoload_register(function($class){
         require_once $file;
     }
 });
-
 
 //my routs
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);

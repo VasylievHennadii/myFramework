@@ -79,6 +79,8 @@ namespace vendor\core;
      * @return void ничего не возвращает
      */
     public static function dispatch($url) {
+        $url = self::removeQueryString($url);
+        var_dump($url);
         if(self::matchRoute($url)) {
            $controller = 'app\controllers\\' . self::$route['controller'];                  
            if(class_exists($controller)) {
@@ -116,9 +118,27 @@ namespace vendor\core;
      * из вида PageNews делает вид pageNews
      * преобразует имена к виду сamelCase
      * @param string $name строка для преобразования
+     * @return string
      */
     protected static function lowerCamelCase($name) {
         return lcfirst(self::upperCamelCase($name));      
+    }
+
+    /**
+     * метод обрезает возможные get-параметры
+     * возвращает только неявные get-параметры, обрезая явные
+     * posts-new/test/?page=2&var1=1&var2=2 вернет posts-new/test
+     * 
+     */
+    protected static function removeQueryString($url) {
+        if($url){
+            $params = explode('&', $url, 2);//складываем в переменную $params в качестве массива строку, разбитую по &
+            if(false === strpos($params[0], '=')) {//если в первом элементе массива нет '=', 
+                return rtrim($params[0], '/');// то мы его возвращаем с обрезанным концевым '/'
+            }else{
+                return '';
+            }            
+        }
     }
 
 
