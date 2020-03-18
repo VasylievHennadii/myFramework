@@ -26,6 +26,12 @@ class View {
      */
     public $layout;
 
+    public function __construct($route, $layout = '', $view = '') {
+        $this->route = $route;
+        $this->layout = $layout ?: LAYOUT;//если $layout был передан - используем его, иначе - константа LAYOUT
+        $this->view = $view;
+    }
+
 }
 
 
