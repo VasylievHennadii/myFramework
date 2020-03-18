@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
-use vendor\core\base\Controller;
+// use vendor\core\base\Controller;
 
 /**
  * Description of Main
  * 
  */
-class Main extends Controller {
+class Main extends App {
 
     public function indexAction() {
        
