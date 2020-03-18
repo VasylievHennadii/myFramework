@@ -1,5 +1,7 @@
 <?php 
 
+namespace app\controllers;
+
 /**
  * Description of PostsNew
  * 

@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use vendor\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
 
@@ -7,14 +9,11 @@ define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
 define('APP', dirname(__DIR__) . '/app');
 
-require '../vendor/core/Router.php';//подключаем класс Router
+// require '../vendor/core/Router.php';//подключаем класс Router
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
-// require '../app/controllers/Main.php';
-// require '../app/controllers/Posts.php';
-// require '../app/controllers/PostsNew.php';
 
 spl_autoload_register(function($class){
-    $file = APP . "/controllers/$class.php";
+    $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
     if(is_file($file)) {
         require_once $file;
     }

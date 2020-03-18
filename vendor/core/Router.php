@@ -1,5 +1,7 @@
 <?php 
 
+namespace vendor\core;
+
 /**
  * Description of Router
  * 
@@ -97,6 +99,9 @@
 
     /**
      * из вида page-news делает вид PageNews
+     * преобразует имена к виду CamelCase
+     * @param string $name строка для преобразования
+     * @return string
      */
     protected static function upperCamelCase($name) {
         // $name = str_replace('-', ' ', $name);//заменяем '-' на ' ' в переменной $name
@@ -108,6 +113,8 @@
 
     /**
      * из вида PageNews делает вид pageNews
+     * преобразует имена к виду сamelCase
+     * @param string $name строка для преобразования
      */
     protected static function lowerCamelCase($name) {
         return lcfirst(self::upperCamelCase($name));      
