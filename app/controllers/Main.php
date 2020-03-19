@@ -14,8 +14,16 @@ class Main extends App{
 
     public function indexAction() {
         // $this->layout = false;
-       $this->layout = 'main';
-    //    $this->view = 'test';
+        // $this->layout = 'main';
+        // $this->view = 'test';
+        $name = 'Андрей';
+        $hi = 'Hello';
+        $colors = [
+            'white' => 'белый',
+            'black' => 'черный',
+        ];
+        $title = 'PAGE TITLE';
+        $this->set(compact('name', 'hi', 'colors', 'title'));
     }
 
 }
