@@ -8,10 +8,14 @@ namespace app\controllers;
  * Description of Main
  * 
  */
-class Main extends App {
+class Main extends App{
+
+    // public $layout = 'main';
 
     public function indexAction() {
-       
+        // $this->layout = false;
+       $this->layout = 'main';
+    //    $this->view = 'test';
     }
 
 }

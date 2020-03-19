@@ -26,10 +26,15 @@ class View {
      */
     public $layout;
 
-    public function __construct($route, $layout = '', $view = '') {
+    public function __construct($route, $layout = '', $view = '') {       
         $this->route = $route;
-        $this->layout = $layout ?: LAYOUT;//если $layout был передан - используем его, иначе - константа LAYOUT
-        $this->view = $view;
+        if($layout === false){
+            $this->layout = false;
+        }else{
+            $this->layout = $layout ?: LAYOUT;
+        }
+        // $this->layout = $layout ?: LAYOUT;//если $layout не пустая строка - используем его, иначе - константа LAYOUT
+        $this->view = $view;        
     }
 
     public function render() {
@@ -40,14 +45,16 @@ class View {
         }else{
             echo "<p>Не найден вид<b>$file_view</b></p>";
         }
-        $content = ob_get_clean();//очищает буфер обмена и складывает в $content   
+        $content = ob_get_clean();//очищает буфер обмена и складывает в $content  
         
-        $file_layout = APP . "/views/layouts/{$this->layout}.php";//подключение шаблона
-        if(is_file($file_layout)){           
-            require $file_layout;
-        }else{
-            echo "<p>Не найден шаблон<b>$file_layout</b></p>";
-        }
+        if(false !== $this->layout){
+            $file_layout = APP . "/views/layouts/{$this->layout}.php";//подключение шаблона
+            if(is_file($file_layout)){           
+                require $file_layout;
+            }else{
+                echo "<p>Не найден шаблон<b>$file_layout</b></p>";
+            }
+        }        
     }
 
 }
