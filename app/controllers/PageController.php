@@ -2,13 +2,11 @@
 
 namespace app\controllers;
 
-// use vendor\core\base\Controller;
-
 /**
  * Description of Page
  * 
  */
-class Page extends App {
+class PageController extends AppController {
 
     public function viewAction() {
         debug($this->route);

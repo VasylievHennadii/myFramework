@@ -8,7 +8,7 @@ use vendor\core\base\Controller;
  * Description of PostsNew
  * 
  */
-class App extends Controller {
+class AppController extends Controller {
 
 }
 

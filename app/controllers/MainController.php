@@ -2,13 +2,11 @@
 
 namespace app\controllers;
 
-// use vendor\core\base\Controller;
-
 /**
  * Description of Main
  * 
  */
-class Main extends App{
+class MainController extends AppController{
 
     // public $layout = 'main';
 
