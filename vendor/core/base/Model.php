@@ -21,7 +21,7 @@ abstract class Model {
      * метод обертка над методом execute Db
      */
     public function query($sql){
-        return $this->pdo->execute();
+        return $this->pdo->execute($sql);
     }
 
     public function findAll(){
