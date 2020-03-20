@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Main;
+
 /**
  * Description of Main
  * 
@@ -11,17 +13,9 @@ class MainController extends AppController{
     // public $layout = 'main';
 
     public function indexAction() {
-        // $this->layout = false;
-        // $this->layout = 'main';
-        // $this->view = 'test';
-        $name = 'Андрей';
-        $hi = 'Hello';
-        $colors = [
-            'white' => 'белый',
-            'black' => 'черный',
-        ];
+       $model = new Main;
         $title = 'PAGE TITLE';
-        $this->set(compact('name', 'hi', 'colors', 'title'));
+        $this->set(compact('title'));
     }
 
 }
