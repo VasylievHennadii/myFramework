@@ -14,12 +14,12 @@ class MainController extends AppController{
 
     public function indexAction() {
        $model = new Main;
-       //скопировали рандомную таблицу "publications.publications" себе в таблицу posts 
+    //скопировали рандомную таблицу "publications.publications" себе в таблицу posts 
     //    $res = $model->query("CREATE TABLE posts SELECT * FROM publications.publications"); 
-        $posts = $model->findAll() ;
-        debug($posts);    
+        $posts = $model->findAll(); 
+        $posts2 = $model->findAll(); 
         $title = 'PAGE TITLE';
-        $this->set(compact('title'));
+        $this->set(compact('title', 'posts'));
     }
 
 }
