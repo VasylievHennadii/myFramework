@@ -41,6 +41,14 @@ abstract class Model {
         return $this->pdo->query($sql, [$id]);
     }
 
+    /**
+     * метод позволяет выбрать что-либо из БД по призвольному sql запросу
+     * 
+     */
+    public function findBySql($sql, $params = []){
+        return $this->pdo->query($sql, $params);
+    }
+
 }
 
 

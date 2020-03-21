@@ -20,8 +20,9 @@ class MainController extends AppController{
         $posts2 = $model->findAll();
         // $post = $model->findOne(3);// выбор по id=3
         // $post = $model->findOne('Погода', 'title');
-        // $post = $model->findOne('Слава');
-        // debug($post);
+        // $post = $model->findOne('Слава');// debug($post);
+        $data = $model->findBySql("SELECT * FROM posts ORDER BY id DESC LIMIT 2");
+        debug($data);
         $title = 'PAGE TITLE';
         $this->set(compact('title', 'posts'));
     }
