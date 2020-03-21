@@ -17,7 +17,11 @@ class MainController extends AppController{
     //скопировали рандомную таблицу "publications.publications" себе в таблицу posts 
     //    $res = $model->query("CREATE TABLE posts SELECT * FROM publications.publications"); 
         $posts = $model->findAll(); 
-        $posts2 = $model->findAll(); 
+        $posts2 = $model->findAll();
+        // $post = $model->findOne(3);// выбор по id=3
+        // $post = $model->findOne('Погода', 'title');
+        // $post = $model->findOne('Слава');
+        // debug($post);
         $title = 'PAGE TITLE';
         $this->set(compact('title', 'posts'));
     }
