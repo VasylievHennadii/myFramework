@@ -21,7 +21,9 @@ class MainController extends AppController{
         // $post = $model->findOne(3);// выбор по id=3
         // $post = $model->findOne('Погода', 'title');
         // $post = $model->findOne('Слава');// debug($post);
-        $data = $model->findBySql("SELECT * FROM posts ORDER BY id DESC LIMIT 2");
+        // $data = $model->findBySql("SELECT * FROM posts ORDER BY id DESC LIMIT 2");
+        // $data = $model->findBySql("SELECT * FROM {$model->table} WHERE title LIKE ?", ['%ми%']);
+        $data = $model->findLike('03', 'date');
         debug($data);
         $title = 'PAGE TITLE';
         $this->set(compact('title', 'posts'));

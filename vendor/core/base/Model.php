@@ -49,6 +49,15 @@ abstract class Model {
         return $this->pdo->query($sql, $params);
     }
 
+    /**
+     * метод позволяетвыбрать из БД по произвольному сочетанию символов 
+     */
+    public function findLike($str, $field, $table = ''){
+        $table = $table ?: $this->table;//если передана таблица, то берём её, иначе - берем таблицу модели
+        $sql = "SELECT * FROM $table WHERE $field LIKE ?";
+        return $this->pdo->query($sql, ['%' . $str . '%']);
+    }
+
 }
 
 
