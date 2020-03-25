@@ -13,8 +13,8 @@
 
     <?=$content?>
 
-    <?= debug(vendor\core\Db::$countSql)?>
-    <?= debug(vendor\core\Db::$queries)?>
+    <!-- <?= debug(vendor\core\Db::$countSql)?> -->
+    <!-- <?= debug(vendor\core\Db::$queries)?> -->
 
     
     

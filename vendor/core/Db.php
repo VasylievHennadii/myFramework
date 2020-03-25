@@ -2,7 +2,9 @@
 
 namespace vendor\core;
 
-use PDO;
+use R;
+
+// use PDO;
 
 /**
  * Dscription of Db
@@ -18,11 +20,15 @@ class Db {
 
     protected function __construct() {
         $db = require ROOT . '/config/config_db.php';
-        $options = [
-            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-        ];
-        $this->pdo = new \PDO($db['dsn'],$db['user'],$db['pass'], $options);
+        require LIBS . '/rb.php';
+        \R::setup($db['dsn'],$db['user'],$db['pass']);
+        \R::freeze(true);//замораживаем структуру таблицы от изменений параметров данных
+        // \R::fancyDebug(TRUE);//распечатываем запросы
+        // $options = [
+        //     \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+        //     \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+        // ];
+        // $this->pdo = new \PDO($db['dsn'],$db['user'],$db['pass'], $options);
     }
 
 
@@ -42,12 +48,12 @@ class Db {
      * @param $sql
      * 
      */
-    public function execute($sql, $params = []) {
-        self::$countSql++;
-        self::$queries[] = $sql;
-        $stmt = $this->pdo->prepare($sql);
-        return $stmt->execute($params);
-    }
+    // public function execute($sql, $params = []) {
+    //     self::$countSql++;
+    //     self::$queries[] = $sql;
+    //     $stmt = $this->pdo->prepare($sql);
+    //     return $stmt->execute($params);
+    // }
 
     /**
      * метод для выполнения запросов
@@ -55,16 +61,16 @@ class Db {
      * @param $sql
      * 
      */
-    public function query($sql, $params = []) {
-        self::$countSql++;
-        self::$queries[] = $sql;
-        $stmt = $this->pdo->prepare($sql);
-        $res = $stmt->execute($params);
-        if($res !== false){
-            return $stmt->fetchAll();
-        }
-        return [];
-    }
+    // public function query($sql, $params = []) {
+    //     self::$countSql++;
+    //     self::$queries[] = $sql;
+    //     $stmt = $this->pdo->prepare($sql);
+    //     $res = $stmt->execute($params);
+    //     if($res !== false){
+    //         return $stmt->fetchAll();
+    //     }
+    //     return [];
+    // }
 
 }
 

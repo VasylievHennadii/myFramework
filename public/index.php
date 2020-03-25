@@ -8,6 +8,7 @@ $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу ст�
 define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
+define('LIBS', dirname(__DIR__) . '/vendor/libs');
 define('APP', dirname(__DIR__) . '/app');
 define('LAYOUT', 'default');
 
