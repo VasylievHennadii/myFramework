@@ -17,6 +17,9 @@ class AppController extends Controller {
 
     public function __construct ($route) {
         parent::__construct($route);
+        if($this->route['action'] == 'test'){
+            echo '<h1>TEST</h1>';//даёт надпись TEST только на странице http://myframework/main/test
+        }
         new Main;
         $this->menu = \R::findAll('category');
     }

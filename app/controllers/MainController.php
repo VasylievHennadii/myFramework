@@ -22,6 +22,9 @@ class MainController extends AppController{
         $this->set(compact('title', 'posts', 'menu'));
     }
 
+    public function testAction() {       
+        $this->layout = 'test';
+    }
 }
 
 
