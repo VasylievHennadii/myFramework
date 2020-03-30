@@ -14,6 +14,7 @@ define('LAYOUT', 'default');
 
 require '../vendor/libs/functions.php';//подключаем библиотеку функций
 
+//функция автозагрузки
 spl_autoload_register(function($class){
     $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
     if(is_file($file)) {
