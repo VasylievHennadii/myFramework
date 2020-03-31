@@ -1,6 +1,7 @@
 <?php
 error_reporting(-1);
 
+use vendor\core\App;
 use vendor\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
@@ -21,6 +22,8 @@ spl_autoload_register(function($class){
         require_once $file;
     }
 });
+
+new App;
 
 //my routs
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
