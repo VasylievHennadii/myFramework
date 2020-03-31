@@ -1,26 +1,12 @@
-<?php
+<?php 
 
-$config = [
-    'components' => [
-        'cache' => 'classes\Cache',
-        'test' => 'classes\Test',
-    ],
-];
-
-//функция автозагрузки
-spl_autoload_register(function($class){
-    $file = str_replace('\\', '/', $class) . '.php';    
-    if(is_file($file)) {
-        require_once $file;
-    }
-});
+namespace vendor\core;
 
 /**
- * Description of Cache
+ * Description of Registry
  * 
  */
 class Registry {
-    
     public static $objects = [];
 
     protected static $instance;
@@ -66,15 +52,7 @@ class Registry {
         var_dump(self::$objects);
         echo'</pre>';
     }
-
 }
-
-$app = Registry::instance();
-$app->getList();
-$app->test->go();
-$app->test2 = 'classes\Test2';
-$app->getList();
-$app->test2->hello();
 
 
 ?>
