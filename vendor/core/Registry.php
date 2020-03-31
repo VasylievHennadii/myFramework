@@ -12,7 +12,7 @@ class Registry {
     protected static $instance;
 
     protected function __construct() {
-        global $config;
+        require_once ROOT . '/config/config.php';
         foreach($config['components'] as $name => $component) {
             self::$objects[$name] = new $component;
         }
