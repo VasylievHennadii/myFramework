@@ -47,6 +47,13 @@ class Cache {
     /**
      * метод для удаления данных из файла Cache
      */
+    public function delete($key){
+        $file = CACHE . '/' . md5($key) . 'txt';
+        //если существует файл cache, то мы его удаляем
+        if(file_exists($file)) {          
+            unlink($file);
+        }
+    }
 
 }
 
