@@ -16,7 +16,7 @@ class MainController extends AppController{
     // public $layout = 'main';
 
     public function indexAction() {
-        App::$app->getList();
+        // App::$app->getList();
         $model = new Main;   
         $posts = \R::findAll('posts');  
         $post = \R::findOne('posts', 'id = 1');
