@@ -17,7 +17,14 @@ class Cache {
      * $seconds - время, на которое сохраняются данные кеш
      */
     public function set($key, $data, $seconds = 3600){
-        
+        //сначала провепяем актуальны ли данные кеш; если да - кладем данные в папку tmp/cache
+        $content['data'] = $data;
+        $content['end_time'] = time() + $seconds; //time() - это текущее время
+        if(file_put_contents(CACHE . '/' . md5($key) . 'txt', serialize($content))){
+            return true;
+        }
+        return false;
+
     }
 
     /**
