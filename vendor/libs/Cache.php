@@ -30,8 +30,18 @@ class Cache {
     /**
      * метод для чтения данных из файла Cache
      */
-    public function get(){
-
+    public function get($key){
+        $file = CACHE . '/' . md5($key) . 'txt';
+        //если существует файл cache, то мы его считываем
+        if(file_exists($file)) {
+            $content = unserialize(file_get_contents($file));
+            //проверяем актуальность нашего кеша
+            if(time() <= $content['end_time']){
+                return $content['data'];// передаем файл кеша
+            }
+            unlink($file);//удаляем, если данные не актуальны
+        }
+        return false;//если файл не существует
     }
 
     /**
