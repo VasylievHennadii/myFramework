@@ -17,10 +17,15 @@ class MainController extends AppController{
 
     public function indexAction() {
         // App::$app->getList();
-        $model = new Main;   
-        $posts = \R::findAll('posts'); 
-        // App::$app->cache->set('posts', $posts);// кешируется на 1 час по дефолту
-        App::$app->cache->set('posts', $posts, 3600*24);// кешируется на 1 сутки
+        $model = new Main;  
+        $posts = App::$app->cache->get('posts');//получаем(возвращаем) данные из кеша методом get
+        //если данные не были возвращены, мы их получаем и заносим в кеш
+        if(!$posts) {
+            $posts = \R::findAll('posts');//получаем данные из БД
+            App::$app->cache->set('posts', $posts, 3600*24);// заносим в кеш (кешируется на 1 сутки)
+        }
+         
+        // App::$app->cache->set('posts', $posts);// кешируется на 1 час по дефолту        
         // echo date('Y-m-d H:i', time());
         // echo '<br>';
         // echo date('Y-m-d H:i', 1585749534);
