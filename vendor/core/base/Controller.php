@@ -46,6 +46,7 @@ abstract class Controller {
         $this->vars = $vars;
     }
 
+    //метод проверяет поступили ли данные асинхронно и возвращает true
     public function isAjax(){
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
     }

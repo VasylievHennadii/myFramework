@@ -55,7 +55,11 @@ class View {
         if(false !== $this->layout){
             $file_layout = APP . "/views/layouts/{$this->layout}.php";//подключение шаблона
             if(is_file($file_layout)){  
-                $content = $this->getScript($content);         
+                $content = $this->getScript($content); 
+                $scripts = [];
+                if(!empty($this->scripts[0])){
+                    $scripts = $this->scripts[0];
+                }             
                 require $file_layout;
             }else{
                 echo "<p>Не найден шаблон<b>$file_layout</b></p>";
