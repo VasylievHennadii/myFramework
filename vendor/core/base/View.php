@@ -28,6 +28,8 @@ class View {
 
     public $scripts = [];
 
+    public static $meta = ['title' => '', 'desc' => '', 'keywords' => ''];
+
     public function __construct($route, $layout = '', $view = '') {       
         $this->route = $route;
         if($layout === false){
@@ -75,6 +77,20 @@ class View {
             $content = preg_replace($pattern, '', $content);
         }
         return $content;
+    }
+
+    //метод будет получать и возвращать метаданные(формирует HTML код)
+    public static function getMeta(){
+        echo '<title>' . self::$meta['title'] . '</title>
+        <meta name="description" content="' . self::$meta['desc'] . '">
+        <meta name="keywords" content="' . self::$meta['keywords'] . '">';
+    }
+
+    //метод будет устанавливать метаданные
+    public static function setMeta($title = '', $desc = '', $keywords = ''){
+        self::$meta['title'] = $title;
+        self::$meta['desc'] = $desc;
+        self::$meta['keywords'] = $keywords;
     }
 
 }
