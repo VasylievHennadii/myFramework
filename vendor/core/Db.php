@@ -12,8 +12,10 @@ use R;
  */
 class Db {
 
+    use TSingletone;//подключаем кусок кода из TSingletone
+
     protected $pdo;
-    protected static $instance;
+    // protected static $instance;
     public static $countSql = 0;
     public static $queries = [];
     
@@ -32,16 +34,17 @@ class Db {
     }
 
 
-    /**
-     * если в self::$instance ничего не записано, то мы в него запишем объект данного класса new self(в нем будет pdo с подключением)
-     * реализация Паттерна (шаблона) проектирования Singleton
-     */
-    public static function instance() {
-        if(self::$instance === null) {
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
+    //убрали этот кусок кода с использованием TSingletone
+    // /**
+    //  * если в self::$instance ничего не записано, то мы в него запишем объект данного класса new self(в нем будет pdo с подключением)
+    //  * реализация Паттерна (шаблона) проектирования Singleton
+    //  */
+    // public static function instance() {
+    //     if(self::$instance === null) {
+    //         self::$instance = new self;
+    //     }
+    //     return self::$instance;
+    // }
 
     /**
      * метод для выполнения запросов

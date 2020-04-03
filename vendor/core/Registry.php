@@ -7,9 +7,12 @@ namespace vendor\core;
  * 
  */
 class Registry {
+
+    use TSingletone;//подключаем кусок кода из TSingletone
+
     public static $objects = [];
 
-    protected static $instance;
+    // protected static $instance;
 
     protected function __construct() {
         require_once ROOT . '/config/config.php';
@@ -18,16 +21,19 @@ class Registry {
         }
     }
 
-    /**
-     * если в self::$instance ничего не записано, то мы в него запишем объект данного класса new self(в нем будет pdo с подключением)
-     * реализация Паттерна (шаблона) проектирования Singleton
-     */
-    public static function instance() {
-        if(self::$instance === null) {
-            self::$instance = new self;
-        }
-        return self::$instance;
-    }
+    
+    //убрали этот кусок кода с использованием TSingletone
+    // /**
+    //  * если в self::$instance ничего не записано, то мы в него запишем объект данного класса new self(в нем будет pdo с подключением)
+    //  * реализация Паттерна (шаблона) проектирования Singleton
+    //  */
+    // public static function instance() {
+    //     if(self::$instance === null) {
+    //         self::$instance = new self;
+    //     }
+    //     return self::$instance;
+    // }
+
 
     /**
      * метод __get
