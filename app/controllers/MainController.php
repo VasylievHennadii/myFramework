@@ -39,11 +39,12 @@ class MainController extends AppController{
 
     public function testAction() {   
         if($this->isAjax()){
-            echo 111;
+            $model = new Main();
+            $post = R::findOne('posts', "id = {$_POST['id']}");
+            $this->loadView('test', compact('post'));
             die;
         }
-        echo 222;
-        // $this->layout = false;
+        echo 222;        
     }
 }
 

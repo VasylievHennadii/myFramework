@@ -51,6 +51,12 @@ abstract class Controller {
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
     }
 
+    //метод для подключения вида
+    public function loadView($view, $vars = []){
+        extract($vars);
+        require APP . "/views/{$this->route['controller']}/{$view}.php";
+    }
+
 }
  
 
