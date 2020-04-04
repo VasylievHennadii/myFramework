@@ -15,6 +15,7 @@ class ErrorHandler {
             error_reporting(0);//не показывает ошибки
         }
         set_error_handler([$this, 'errorHandler']);//вызов метода errorHandler
+        register_shutdown_function([$this, 'fatalErrorHandler']);
     }
 
     // создаем свой метод обработки ошибок
@@ -22,6 +23,12 @@ class ErrorHandler {
         $this->displayError($errno, $errstr, $errfile, $errline);
         // return false;//ошибка передается дальше
         return true;//ошибка не передается дальше
+    }
+
+    //метод для получения фатальных ошибок
+    public function fatalErrorHandler(){
+        $error = error_get_last();//получаем последнюю ошибку
+        var_dump($error);
     }
 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
@@ -40,7 +47,9 @@ class ErrorHandler {
 
 new ErrorHandler();
 
-echo $test;
+// echo $test;
+
+test();
 
 
 
