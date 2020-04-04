@@ -19,7 +19,7 @@ class ErrorHandler {
 
     // создаем свой метод обработки ошибок
     public function errorHandler($errno, $errstr, $errfile, $errline){
-        
+        $this->displayError($errno, $errstr, $errfile, $errline);
         // return false;//ошибка передается дальше
         return true;//ошибка не передается дальше
     }
@@ -27,10 +27,11 @@ class ErrorHandler {
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
         http_response_code($response);
         if(DEBUG){
-
+            require 'views/dev.php';
         }else{
-            
+            require 'views/prod.php';
         }
+        die;
     }
 
 
