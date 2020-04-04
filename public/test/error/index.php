@@ -15,6 +15,7 @@ class ErrorHandler {
             error_reporting(0);//не показывает ошибки
         }
         set_error_handler([$this, 'errorHandler']);//вызов метода errorHandler
+        ob_start();
         register_shutdown_function([$this, 'fatalErrorHandler']);
     }
 
@@ -28,7 +29,12 @@ class ErrorHandler {
     //метод для получения фатальных ошибок
     public function fatalErrorHandler(){
         $error = error_get_last();//получаем последнюю ошибку
-        var_dump($error);
+        if(!empty($error) && $error['type'] & ( E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR)){
+            ob_end_clean();//очищаем буфер обмена
+            $this->displayError($error['type'], $error['message'], $error['file'], $error['line']);
+        }else{
+            ob_end_flush();
+        }
     }
 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
