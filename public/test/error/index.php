@@ -17,6 +17,7 @@ class ErrorHandler {
         set_error_handler([$this, 'errorHandler']);//вызов метода errorHandler
         ob_start();
         register_shutdown_function([$this, 'fatalErrorHandler']);
+        set_exception_handler([$this, 'exceptionHandler']);
     }
 
     // создаем свой метод обработки ошибок
@@ -37,6 +38,11 @@ class ErrorHandler {
         }
     }
 
+    //метод для обработки исключений
+    public function exceptionHandler(Exception $e){       
+        $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
+    }
+
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
         http_response_code($response);
         if(DEBUG){
@@ -55,9 +61,18 @@ new ErrorHandler();
 
 // echo $test;
 
-test();
+// test();
+
+// try{
+//     if(empty($test)){
+//         throw new Exception('Упс, исключение');
+//     }
+// }catch(Exception $e){
+//     var_dump($e);
+// }
 
 
+throw new Exception('Упс, исключение', 404);
 
 
 ?>
