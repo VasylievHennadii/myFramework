@@ -6,6 +6,12 @@
 
 define("DEBUG", 1);//1-режим разработки; 0-боевой режим
 
+class NotFoundExeption extends Exception {
+    public function __construct($message = '', $code = 404) {
+        parent::__construct($message, $code);
+    }
+}
+
 class ErrorHandler {
 
     public function __construct() {
@@ -39,7 +45,7 @@ class ErrorHandler {
     }
 
     //метод для обработки исключений
-    public function exceptionHandler(Exception $e){       
+    public function exceptionHandler($e){       
         $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
     }
 
@@ -71,8 +77,9 @@ new ErrorHandler();
 //     var_dump($e);
 // }
 
+throw new NotFoundExeption('Страница не найдена');
 
-throw new Exception('Упс, исключение', 404);
+// throw new Exception('Упс, исключение');
 
 
 ?>
