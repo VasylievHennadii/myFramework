@@ -214,3 +214,112 @@ Stack trace:
 -------------
 [2020-04-05 03:56:34] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
 -------------
+[2020-04-05 04:05:33] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 11:39:38] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 11:40:03] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 73
+-------------
+[2020-04-05 11:42:20]
+Ошибка:  Call to undefined function test()
+В файле: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php
+Строка:  65
+===========================================================================================================================================================
+[2020-04-05 11:42:20]
+Ошибка:  Undefined variable: errno
+В файле: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\views\dev.php
+Строка:  11
+===========================================================================================================================================================
+[2020-04-05 11:43:01]
+Ошибка:  Undefined variable: test
+В файле: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php
+Строка:  64
+===========================================================================================================================================================
+[2020-04-05 11:45:05] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 11:45:17] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 71
+-------------
+[2020-04-05 11:45:31] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 73
+-------------
+[2020-04-05 11:46:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 83
+-------------
+[2020-04-05 11:46:50] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 11:47:04] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 71
+-------------
+[2020-04-05 11:47:18] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 73
+-------------
+[2020-04-05 11:50:27] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 77
+-------------
+[2020-04-05 11:51:12] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 79
+-------------
+[2020-04-05 11:51:27] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 80
+-------------
+[2020-04-05 11:53:51] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 11:54:18] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 12:02:07] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 12:02:08] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 12:02:17] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 12:02:39] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 80
+-------------
+[2020-04-05 12:02:54] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 82
+-------------
+[2020-04-05 12:17:44] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 12:17:56] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 73
+-------------
+[2020-04-05 12:34:04] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
+-------------
+[2020-04-05 12:35:01] Текст ошибки: register_shutdown_function(): Invalid shutdown callback 'ErrorHandler::fatalErrorHandler' passed | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 25
+-------------
+[2020-04-05 12:36:25] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 91
+-------------
+[2020-04-05 12:37:46] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 90
+-------------
+[2020-04-05 12:38:00] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 78
+-------------
+[2020-04-05 12:38:26] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 85
+-------------
+[2020-04-05 12:39:17] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 73
+-------------
+[2020-04-05 12:55:00] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 100
+-------------
+[2020-04-05 12:55:16] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 88
+-------------
+[2020-04-05 12:55:31] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 86
+-------------
+[2020-04-05 12:55:43] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 98
+-------------
+[2020-04-05 12:56:26] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 98
+-------------
+[2020-04-05 12:56:28] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 98
+-------------
+[2020-04-05 12:56:39] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 100
+-------------
+[2020-04-05 12:56:50] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 86
+-------------
+[2020-04-05 12:57:01] Текст ошибки: Uncaught TypeError: Argument 1 passed to ErrorHandler::exceptionHandler() must be an instance of Exception, instance of Error given in C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php:65
+Stack trace:
+#0 [internal function]: ErrorHandler->exceptionHandler(Object(Error))
+#1 {main}
+  thrown | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 65
+-------------
+[2020-04-05 12:59:03] Текст ошибки: Call to undefined function test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 88
+-------------
+[2020-04-05 12:59:47] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 100
+-------------
+[2020-04-05 13:01:53] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 101
+-------------
+[2020-04-05 13:04:17] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 101
+-------------
+[2020-04-05 13:06:04] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 99
+-------------
+[2020-04-06 22:47:59] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
+-------------
+[2020-04-06 22:48:02] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
+-------------

@@ -1,12 +1,6 @@
 <?php 
 
-define("DEBUG", 1);//1-режим разработки; 0-боевой режим
-
-class NotFoundException extends Exception {
-    public function __construct($message = '', $code = 404) {
-        parent::__construct($message, $code);
-    }
-}
+namespace vendor\core;
 
 class ErrorHandler {
 
@@ -73,26 +67,7 @@ class ErrorHandler {
         }
         die;
     }
-    
 }
-
-new ErrorHandler();
-
-// echo $test;
-
-// test();
-
-// try{
-//     if(empty($test)){
-//         throw new Exception('Упс, исключение');
-//     }
-// }catch(Exception $e){
-//     var_dump($e);
-// }
-
-// throw new NotFoundException('Страница не найдена');
-
-throw new Exception('Упс, исключение');
 
 
 ?>
