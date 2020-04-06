@@ -26,8 +26,9 @@ class ErrorHandler {
      * @return boolean
      */
     public function errorHandler($errno, $errstr, $errfile, $errline){ 
-        //логируем ошибки      
-        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$errstr} | Файл: {$errfile}, | Строка: {$errline}\n-------------\n", 3, __DIR__ . '/errors.log');
+        //логируем ошибки 
+        $this->logErrors($errstr, $errfile, $errline);     
+        // error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$errstr} | Файл: {$errfile}, | Строка: {$errline}\n-------------\n", 3, __DIR__ . '/errors.log');
         // выводим свое сообщение об ошибке
         $this->displayError($errno, $errstr, $errfile, $errline);
         // return false;//ошибка передается дальше
@@ -43,7 +44,8 @@ class ErrorHandler {
         $error = error_get_last();//получаем последнюю ошибку  
         // если была ошибка и она фатальна     
         if(!empty($error) && $error['type'] & ( E_ERROR | E_PARSE | E_COMPILE_ERROR | E_CORE_ERROR)){
-            error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$error['message']} | Файл: {$error['file']}, | Строка: {$error['line']}\n-------------\n", 3, __DIR__ . '/errors.log');            
+            $this->logErrors($error['message'], $error['file'], $error['line']);
+            // error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$error['message']} | Файл: {$error['file']}, | Строка: {$error['line']}\n-------------\n", 3, __DIR__ . '/errors.log');            
             ob_end_clean();// очищаем буффер (не выводим стандартное сообщение об ошибке)
             $this->displayError($error['type'], $error['message'], $error['file'], $error['line']);
         }else{
@@ -53,9 +55,17 @@ class ErrorHandler {
     }
 
     //метод для обработки исключений
-    public function exceptionHandler($e){            
-        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$e->getMessage()} | Файл: {$e->getFile()}, | Строка: {$e->getLine()}\n-------------\n", 3, __DIR__ . '/errors.log');      
+    public function exceptionHandler($e){  
+        $this->logErrors($e->getMessage(), $e->getFile(), $e->getLine());          
+        // error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$e->getMessage()} | Файл: {$e->getFile()}, | Строка: {$e->getLine()}\n-------------\n", 3, __DIR__ . '/errors.log');      
         $this->displayError('Исключение', $e->getMessage(), $e->getFile(), $e->getLine(), $e->getCode());
+    }
+
+    /**
+     * метод логирования ошибок
+     */
+    protected function logErrors($message = '', $file = '', $line = '') {
+        error_log("[" . date('Y-m-d H:i:s') . "] Текст ошибки: {$message} | Файл: {$file}, | Строка: {$line}\n-------------\n", 3, ROOT . '/tmp/errors.log');  
     }
 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
