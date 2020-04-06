@@ -18,8 +18,8 @@ class MainController extends AppController{
 
     public function indexAction() {       
         // R::fancyDebug(true);
-        $model = new Main;  
-
+        $model = new Main;
+        
         // // кеширование
         // $posts = App::$app->cache->get('posts');//получаем(возвращаем) данные из кеша методом get
         // //если данные не были возвращены, мы их получаем и заносим в кеш

@@ -323,3 +323,7 @@ Stack trace:
 -------------
 [2020-04-06 22:48:02] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
 -------------
+[2020-04-06 23:12:34] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
+-------------
+[2020-04-06 23:35:42] Текст ошибки: Упс, исключение | Файл: C:\OpenServer\OSPanel\domains\myFramework\public\test\error\index.php, | Строка: 95
+-------------

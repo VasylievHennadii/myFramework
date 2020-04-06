@@ -70,10 +70,14 @@ class ErrorHandler {
 
     protected function displayError($errno, $errstr, $errfile, $errline, $response = 500){
         http_response_code($response);
+        if($response == 404){
+            require WWW . '/errors/404.html';
+            die;
+        }
         if(DEBUG){
-            require 'views/dev.php';
+            require WWW . '/errors/dev.php';
         }else{
-            require 'views/prod.php';
+            require WWW . '/errors/prod.php';
         }
         die;
     }

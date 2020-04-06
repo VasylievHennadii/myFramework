@@ -1,11 +1,11 @@
 <?php
-error_reporting(-1);
 
 use vendor\core\App;
 use vendor\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
 
+define('DEBUG', 1);
 define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
