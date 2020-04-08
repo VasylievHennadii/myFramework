@@ -1,28 +1,24 @@
-[2020-04-07 00:06:42] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:14:09] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-07 00:07:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:29:21] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-07 00:07:41] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:30:06] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-07 00:09:28] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
+[2020-04-08 15:30:28] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-07 00:11:37] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
+[2020-04-08 15:31:29] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-07 00:12:15] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:31:29] Текст ошибки: Call to undefined function app\controllers\test() | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
-[2020-04-07 00:13:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:33:33] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
-[2020-04-07 00:14:12] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:36:30] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
-[2020-04-08 11:50:33] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:38:35] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
-[2020-04-08 11:50:42] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:39:35] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
-[2020-04-08 12:02:22] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:40:50] Текст ошибки: Undefined variable: test | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 22
 -------------
-[2020-04-08 12:02:31] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
--------------
-[2020-04-08 12:02:38] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
--------------
-[2020-04-08 12:02:42] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+[2020-04-08 15:41:13] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------

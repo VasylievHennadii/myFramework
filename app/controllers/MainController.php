@@ -19,6 +19,8 @@ class MainController extends AppController{
     public function indexAction() {       
         // R::fancyDebug(true);
         $model = new Main;
+        // echo $test;
+        // trigger_error("E_USER_ERROR", E_USER_ERROR);
         
         // // кеширование
         // $posts = App::$app->cache->get('posts');//получаем(возвращаем) данные из кеша методом get
