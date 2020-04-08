@@ -2,6 +2,8 @@
 
 namespace vendor\widgets\menu;
 
+use vendor\libs\Cache;
+
 class Menu {
 
     protected $data; //простой массив с данными
@@ -12,6 +14,7 @@ class Menu {
     protected $class = 'menu';
     protected $table = 'categories'; //таблица, из которой выбираются данные(по умолчанию - таблица категорий)
     protected $cache = 3600; //кеширование меню, время в сек
+    protected $cacheKey = 'fw_menu';
 
     public function __construct($options = []) {
         $this->tpl = __DIR__ . '/menu_tpl/menu.php';
@@ -45,13 +48,18 @@ class Menu {
      * метод запускает все прочие методы, строящие для нас меню
      */
     protected function run(){
-        //получаем массив $data используя redBeanPHP
-        $this->data = \R::getAssoc("SELECT * FROM {$this->table}"); //вернет массив из БД, ключом которого является первый элемент(здесь это id)
+        $cache = new Cache();
+        $this->menuHtml = $cache->get($this->cacheKey);
+        if(!$this->menuHtml){
+            //получаем массив $data используя redBeanPHP
+            $this->data = \R::getAssoc("SELECT * FROM {$this->table}"); //вернет массив из БД, ключом которого является первый элемент(здесь это id)
 
-        //получаем дерево
-        $this->tree = $this->getTree();
-        // debug($this->tree);
-        $this->menuHtml = $this->getMenuHtml($this->tree);
+            //получаем дерево
+            $this->tree = $this->getTree();
+            
+            $this->menuHtml = $this->getMenuHtml($this->tree);
+            $cache->set($this->cacheKey, $this->menuHtml, $this->cache);
+        }        
         $this->output();
     }
 

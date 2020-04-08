@@ -9,6 +9,7 @@
         'class' => 'my-select',
         'table' => 'categories',
         'cache' => 60,
+        'cacheKey' => 'menu_select',
     ]); ?>
     <?php new vendor\widgets\menu\Menu([
         'tpl' => WWW . '/menu/my_menu.php',        
@@ -16,6 +17,7 @@
         'class' => 'my-menu',
         'table' => 'categories',
         'cache' => 60,
+        'cacheKey' => 'menu_ul',
     ]); ?>
     <?php if(!empty($posts)): ?>
         <?php foreach($posts as $post): ?>
