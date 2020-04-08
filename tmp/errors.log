@@ -22,3 +22,7 @@
 -------------
 [2020-04-08 15:41:13] Текст ошибки: E_USER_ERROR | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 23
 -------------
+[2020-04-08 23:26:27] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+-------------
+[2020-04-09 00:51:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
+-------------

@@ -4,16 +4,41 @@ namespace vendor\widgets\menu;
 
 class Menu {
 
-    protected $data;//простой массив с данными
-    protected $tree;//массив дерево
-    protected $menuHtml;//html код меню
-    protected $tpl;// путь к шаблону, который используем для построения кода html меню
-    protected $container;//родительский тег-обертка, в который оборачиваем наше меню(либо ul, либо select, либо что-то другое)
-    protected $table;//таблица, из которой выбираются данные(по умолчанию - таблица категорий)
-    protected $cache;//кеширование меню
+    protected $data; //простой массив с данными
+    protected $tree; //массив дерево
+    protected $menuHtml; //html код меню
+    protected $tpl; //путь к шаблону, который используем для построения кода html меню
+    protected $container = 'ul'; //родительский тег-обертка, в который оборачиваем наше меню(либо ul, либо select, либо что-то другое)
+    protected $class = 'menu';
+    protected $table = 'categories'; //таблица, из которой выбираются данные(по умолчанию - таблица категорий)
+    protected $cache = 3600; //кеширование меню, время в сек
 
-    public function __construct() {
+    public function __construct($options = []) {
+        $this->tpl = __DIR__ . '/menu_tpl/menu.php';
+        $this->getOptions($options);
         $this->run();
+    }
+
+    /**
+     * метод для использования protected $tpl
+     * метод на вход принимает массив настроек
+     */
+    protected function getOptions($options){
+        foreach($options as $k => $v){
+            //если есть такое свойство виджета, то заполняем его переданным значением. Иначе - остаются по умолчанию
+            if(property_exists($this, $k)){
+                $this->$k = $v;
+            }
+        }
+    }
+
+    /**
+     * метод для использования protected $container
+     */
+    protected function output(){
+        echo "<{$this->container} class='{$this->class}'>";
+            echo $this->menuHtml;
+        echo "</{$this->container}>";
     }
 
     /**
@@ -21,13 +46,17 @@ class Menu {
      */
     protected function run(){
         //получаем массив $data используя redBeanPHP
-        $this->data = \R::getAssoc("SELECT * FROM categories");//вернет массив из БД, ключом которого является первый элемент(здесь это id)
+        $this->data = \R::getAssoc("SELECT * FROM {$this->table}"); //вернет массив из БД, ключом которого является первый элемент(здесь это id)
+
+        //получаем дерево
         $this->tree = $this->getTree();
-        debug($this->tree);
+        // debug($this->tree);
+        $this->menuHtml = $this->getMenuHtml($this->tree);
+        $this->output();
     }
 
     /**
-     * метод получающий дерeво из данного массива
+     * метод получающий целиком дерeво из данного массива
      */
     protected function getTree(){
         $tree = [];
@@ -39,9 +68,31 @@ class Menu {
                 $data[$node['parent']]['childs'][$id] = &$node;
             }
         }
+	    return $tree;
+    }
 
-	return $tree;
+    /**
+     * метод построения Html кода меню
+     * на каждой итерации передается не всё дерево, а только childs
+     */
+    protected function getMenuHtml($tree, $tab = ''){
+        $str = '';
+        foreach($tree as $id => $category){
+            $str .= $this->catToTemplate($category, $tab, $id);
+        }
+        return $str;
+    }
 
+    /**
+     * отправка категории в шаблон
+     */
+    protected function catToTemplate($category, $tab, $id){
+        ob_start(); //включаем буферизацию, нужно возвращать html код, а не выводить на экран
+
+        //подключаем некий шаблон
+        require $this->tpl;
+
+        return ob_get_clean(); //вовращаем и очищаем буфер
     }
 
 
