@@ -5,7 +5,7 @@ use vendor\core\Router;//импорт полного имени(пути) кла
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
 
-define('DEBUG', 1);
+define('DEBUG', 1);//1 - режим отладки, 2- режим продакшн
 define('WWW', __DIR__);
 define('CORE', dirname(__DIR__) . '/vendor/core');
 define('ROOT', dirname(__DIR__));
