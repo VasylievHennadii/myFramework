@@ -21,8 +21,9 @@
                 type: 'post',
                 data: {'id': 2},
                 success: function(res){
-                    var data = JSON.parse(res);
-                    $('#answer').html('<p>Ответ: ' + data.answer + ' | Код: ' + data.code + '</p>');
+                    // var data = JSON.parse(res);
+                    // $('#answer').html('<p>Ответ: ' + data.answer + ' | Код: ' + data.code + '</p>');
+                    $('#answer').html(res);
                     // console.log(res);
                 },
                 error: function(){
