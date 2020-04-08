@@ -4,6 +4,14 @@
     <br>
     <?php new vendor\widgets\menu\Menu([
         // 'tpl' => WWW . '/menu/my_menu.php',
+        'tpl' => WWW . '/menu/select.php',
+        'container' => 'select',
+        'class' => 'my-select',
+        'table' => 'categories',
+        'cache' => 60,
+    ]); ?>
+    <?php new vendor\widgets\menu\Menu([
+        'tpl' => WWW . '/menu/my_menu.php',        
         'container' => 'ul',
         'class' => 'my-menu',
         'table' => 'categories',

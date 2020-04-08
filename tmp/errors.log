@@ -26,3 +26,5 @@
 -------------
 [2020-04-09 00:51:49] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 102
 -------------
+[2020-04-09 01:23:41] Текст ошибки: require(C:\OpenServer\OSPanel\domains\myFramework\app\views\Main/menu_tpl/select.php): failed to open stream: No such file or directory | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\widgets\menu\Menu.php, | Строка: 93
+-------------
