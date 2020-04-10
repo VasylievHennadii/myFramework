@@ -26,11 +26,21 @@ spl_autoload_register(function($class){
 
 new App;
 
-//my routs
+/**
+ * my routs
+ */
 Router::add('^page/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Page']);
 Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'view']);
 
-//default routs
+/**
+ * default routs
+ */
+//правила для админской части
+Router::add('^admin$', ['controller' => 'User', 'action' => 'index', 'prefix' => 'admin']);
+Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
+
+
+
 // правила по умолчанию, которые обслуживают всю маршрутизацию фреймворка. Работают с регулярными выражениями
 // 1 правило провалидирует пустую строку(т.е. домен нашего сайта) и отработает контроллер и действия по умолчанию
 // '^$' - обозначение пустой строки в регулярных выражениях
