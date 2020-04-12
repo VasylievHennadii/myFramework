@@ -7,22 +7,23 @@ $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу ст�
 
 define('DEBUG', 1);//1 - режим отладки, 2- режим продакшн
 define('WWW', __DIR__);
-define('CORE', dirname(__DIR__) . '/vendor/core');
+define('CORE', dirname(__DIR__) . '/vendor/fw/core');
 define('ROOT', dirname(__DIR__));
-define('LIBS', dirname(__DIR__) . '/vendor/libs');
+define('LIBS', dirname(__DIR__) . '/vendor/fw/libs');
 define('APP', dirname(__DIR__) . '/app');
 define('CACHE', dirname(__DIR__) . '/tmp/cache');
 define('LAYOUT', 'default');
 
-require '../vendor/libs/functions.php';//подключаем библиотеку функций
+require '../vendor/fw/libs/functions.php';//подключаем библиотеку функций
+require __DIR__ . '/../vendor/autoload.php';
 
 //функция автозагрузки
-spl_autoload_register(function($class){
-    $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
-    if(is_file($file)) {
-        require_once $file;
-    }
-});
+// spl_autoload_register(function($class){
+//     $file = ROOT . "/" . str_replace('\\', '/', $class) . '.php';    
+//     if(is_file($file)) {
+//         require_once $file;
+//     }
+// });
 
 new App;
 

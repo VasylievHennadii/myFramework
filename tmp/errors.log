@@ -66,3 +66,5 @@
 -------------
 [2020-04-11 01:17:41] Текст ошибки: syntax error, unexpected '}' | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\admin\UserController.php, | Строка: 27
 -------------
+[2020-04-12 23:04:25] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\core\Router.php, | Строка: 109
+-------------
