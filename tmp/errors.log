@@ -1,0 +1,14 @@
+[2020-04-13 02:08:45] Текст ошибки: Class 'PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 32
+-------------
+[2020-04-13 02:10:43] Текст ошибки: Class 'app\controllers\PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 32
+-------------
+[2020-04-13 02:10:56] Текст ошибки: Class 'PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 32
+-------------
+[2020-04-13 02:14:28] Текст ошибки: Class 'PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 33
+-------------
+[2020-04-13 02:14:55] Текст ошибки: syntax error, unexpected '/' | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 33
+-------------
+[2020-04-13 02:15:05] Текст ошибки: Class 'PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 33
+-------------
+[2020-04-13 02:15:35] Текст ошибки: Class 'PHPMailer\PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 33
+-------------
