@@ -5,8 +5,8 @@ namespace app\controllers;
 use app\models\Main;
 
 use R;
-use vendor\core\App;
-use vendor\core\base\View;
+use fw\core\App;
+use fw\core\base\View;
 
 /**
  * Description of Main

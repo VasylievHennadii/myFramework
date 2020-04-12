@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-// use vendor\core\base\Controller;
+// use fw\core\base\Controller;
 
 /**
  * Description of Posts

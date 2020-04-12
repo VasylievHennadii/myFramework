@@ -3,7 +3,7 @@
 namespace app\controllers\admin;
 
 use app\controllers\admin\AppController;
-use vendor\core\base\View;
+use fw\core\base\View;
 
 class UserController extends AppController {
 

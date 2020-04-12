@@ -16,8 +16,8 @@
 
     <?=$content?>
 
-    <?php //debug(vendor\core\Db::$countSql)?>
-    <?php // debug(vendor\core\Db::$queries)?>
+    <?php //debug(fw\core\Db::$countSql)?>
+    <?php // debug(fw\core\Db::$queries)?>
 
     </div>
     

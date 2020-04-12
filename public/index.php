@@ -1,7 +1,7 @@
 <?php
 
-use vendor\core\App;
-use vendor\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
+use fw\core\App;
+use fw\core\Router;//импорт полного имени(пути) класса. подключение простанства имён
 
 $query = rtrim($_SERVER['QUERY_STRING'], '/');// получаем нашу строку запроса
 

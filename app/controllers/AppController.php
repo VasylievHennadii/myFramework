@@ -3,7 +3,7 @@
 namespace app\controllers;
 
 use app\models\Main;
-use vendor\core\base\Controller;
+use fw\core\base\Controller;
 
 use R;
 

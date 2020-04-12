@@ -1,6 +1,6 @@
 <?php 
 
-namespace vendor\libs;
+namespace fw\libs;
 
 /**
  * Description of Cache
