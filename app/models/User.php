@@ -6,7 +6,12 @@ use fw\core\base\Model;
 
 class User extends Model {
 
-    
+    public $attributes = [
+        'login' => '',
+        'password' => '',
+        'email' => '',
+        'name' => '',
+    ];
 
 }
 

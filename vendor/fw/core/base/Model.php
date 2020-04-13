@@ -13,9 +13,21 @@ abstract class Model {
     protected $pdo;
     protected $table;
     protected $pk = 'id';
+    public $attributes = [];
 
     public function __construct(){
         $this->pdo = Db::instance();
+    }
+
+    /**
+     * метод для автоматической загрузки данных
+     */
+    public function load($data){
+        foreach ($this->attributes as $name => $value){
+            if(isset($data[$name])){
+                $this->attributes[$name] = $data[$name];
+            }
+        }
     }
 
     /**
