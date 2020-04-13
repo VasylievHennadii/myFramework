@@ -16,3 +16,7 @@
 -------------
 [2020-04-13 23:33:32] Текст ошибки: <p>Не найден вид<b>C:\OpenServer\OSPanel\domains\myFramework/app/views/User/logout.php</b></p> | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\View.php, | Строка: 54
 -------------
+[2020-04-14 01:09:32] Текст ошибки: Class 'fw\core\base\Validator' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\Model.php, | Строка: 39
+-------------
+[2020-04-14 01:14:41] Текст ошибки: Use of undefined constant rules - assumed 'rules' | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\Model.php, | Строка: 41
+-------------

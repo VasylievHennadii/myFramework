@@ -13,6 +13,21 @@ class User extends Model {
         'name' => '',
     ];
 
+    public $rules = [
+        'required' => [
+            ['login'],
+            ['password'],
+            ['email'],
+            ['name'],
+        ],
+        'email' => [
+            ['email'],
+        ],
+        'lengthMin' => [
+            ['password', 6],
+        ],
+    ];
+
 }
 
 

@@ -3,6 +3,7 @@
 namespace fw\core\base;
 
 use fw\core\Db;
+use Valitron\Validator;
 
 /**
  * Dscription of Model
@@ -14,6 +15,8 @@ abstract class Model {
     protected $table;
     protected $pk = 'id';
     public $attributes = [];
+    public $errors = [];
+    public $rules = [];
 
     public function __construct(){
         $this->pdo = Db::instance();
@@ -28,6 +31,19 @@ abstract class Model {
                 $this->attributes[$name] = $data[$name];
             }
         }
+    }
+
+    /**
+     * метод для валидации
+     */
+    public function validate($data){
+        $v = new Validator($data);
+        $v->rules($this->rules);
+        if($v->validate()){
+            return true;
+        }
+        $this->errors = $v->errors();
+        return false;
     }
 
     /**
