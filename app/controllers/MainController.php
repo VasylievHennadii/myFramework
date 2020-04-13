@@ -33,7 +33,7 @@ class MainController extends AppController{
         $log->error('Bar');
 
         $mailer = new PHPMailer();
-        var_dump($mailer);
+        // var_dump($mailer);
         
 
         // R::fancyDebug(true);

@@ -12,3 +12,7 @@
 -------------
 [2020-04-13 02:15:35] Текст ошибки: Class 'PHPMailer\PHPMailer' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 33
 -------------
+[2020-04-13 22:07:15] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-13 23:33:32] Текст ошибки: <p>Не найден вид<b>C:\OpenServer\OSPanel\domains\myFramework/app/views/User/logout.php</b></p> | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\View.php, | Строка: 54
+-------------
