@@ -30,3 +30,5 @@
 -------------
 [2020-04-15 01:01:14] Текст ошибки: Undefined variable: _SESSION | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Layouts\default.php, | Строка: 23
 -------------
+[2020-04-15 01:56:40] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'user1' for key 'login' | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\libs\rb.php, | Строка: 720
+-------------
