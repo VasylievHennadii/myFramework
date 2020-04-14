@@ -13,6 +13,9 @@ class User extends Model {
         'name' => '',
     ];
 
+    /**
+     * правила валидации
+     */
     public $rules = [
         'required' => [
             ['login'],

@@ -20,3 +20,13 @@
 -------------
 [2020-04-14 01:14:41] Текст ошибки: Use of undefined constant rules - assumed 'rules' | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\Model.php, | Строка: 41
 -------------
+[2020-04-14 22:56:21] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-14 22:57:02] Текст ошибки: <p>Не найден вид<b>C:\OpenServer\OSPanel\domains\myFramework/app/views/User/logout.php</b></p> | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\View.php, | Строка: 55
+-------------
+[2020-04-14 23:25:00] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-14 23:25:19] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-15 01:01:14] Текст ошибки: Undefined variable: _SESSION | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Layouts\default.php, | Строка: 23
+-------------

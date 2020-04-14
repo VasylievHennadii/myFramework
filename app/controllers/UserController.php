@@ -12,10 +12,9 @@ class UserController extends AppController {
             $user = new User();
             $data = $_POST;
             $user->load($data);
-            if($user->validate($data)){
-                echo 'OK';
-            }else{
-                echo 'NO';
+            if(!$user->validate($data)){
+                $user->getErrors();
+                redirect();
             }
             die;
         }
