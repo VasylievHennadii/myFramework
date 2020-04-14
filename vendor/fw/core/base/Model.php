@@ -48,7 +48,7 @@ abstract class Model {
     }
 
     /**
-     * метод сохранения юсеров в БД
+     * метод сохранения юзеров в БД
      */
     public function save($table){
         $tbl = \R::dispense($table);
