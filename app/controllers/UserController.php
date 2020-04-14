@@ -16,7 +16,12 @@ class UserController extends AppController {
                 $user->getErrors();
                 redirect();
             }
-            die;
+            if($user->save('user')){
+                $_SESSION['success'] = 'Вы успешно зарегистрированы';
+            }else{
+                $_SESSION['error'] = 'Ошибка! Попробуйте позже';
+            }
+            redirect();            
         }
         View::setMeta('Регистрация');
     }

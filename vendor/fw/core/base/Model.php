@@ -3,6 +3,7 @@
 namespace fw\core\base;
 
 use fw\core\Db;
+use R;
 use Valitron\Validator;
 
 /**
@@ -44,6 +45,17 @@ abstract class Model {
         }
         $this->errors = $v->errors();
         return false;
+    }
+
+    /**
+     * метод сохранения юсеров в БД
+     */
+    public function save($table){
+        $tbl = \R::dispense($table);
+        foreach($this->attributes as $name => $value){
+            $tbl->$name = $value;
+        }
+        return \R::store($tbl);
     }
 
     public function getErrors(){
