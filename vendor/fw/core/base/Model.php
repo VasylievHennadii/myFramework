@@ -38,6 +38,8 @@ abstract class Model {
      * метод для валидации
      */
     public function validate($data){
+        Validator::langDir(WWW . '/valitron/lang');
+        Validator::lang('ru');
         $v = new Validator($data);
         $v->rules($this->rules);
         if($v->validate()){
