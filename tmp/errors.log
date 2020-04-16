@@ -32,3 +32,15 @@
 -------------
 [2020-04-15 01:56:40] Текст ошибки: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'user1' for key 'login' | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\libs\rb.php, | Строка: 720
 -------------
+[2020-04-15 13:41:45] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-15 13:45:02] Текст ошибки: <p>Не найден вид<b>C:\OpenServer\OSPanel\domains\myFramework/app/views/User/logout.php</b></p> | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\View.php, | Строка: 55
+-------------
+[2020-04-16 19:48:21] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-16 20:30:45] Текст ошибки: <p>Не найден вид<b>C:\OpenServer\OSPanel\domains\myFramework/app/views/User/logout.php</b></p> | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\View.php, | Строка: 55
+-------------
+[2020-04-16 20:38:54] Текст ошибки: Метод <b>app\controllers\PageController::indexAction</b> не найден | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 100
+-------------
+[2020-04-16 20:58:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
