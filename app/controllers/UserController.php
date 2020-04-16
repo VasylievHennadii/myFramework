@@ -22,6 +22,7 @@ class UserController extends AppController {
 
             if($user->save('user')){
                 $_SESSION['success'] = 'Вы успешно зарегистрированы';
+                redirect('/');
             }else{
                 $_SESSION['error'] = 'Ошибка! Попробуйте позже';
             }
@@ -35,10 +36,11 @@ class UserController extends AppController {
             $user = new User();
             if($user->login()){
                 $_SESSION['success'] = 'Вы успешно авторизованы';
+                redirect('/');
             }else{
                 $_SESSION['error'] = 'Логин или пароль введены неверно';
             }
-            redirect('/');
+            redirect('/user/login');
         }
         View::setMeta('Вход');
     }

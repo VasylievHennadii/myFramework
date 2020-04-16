@@ -9,7 +9,6 @@
     <link href="/css/main.css" rel="stylesheet">
   </head>
   <body>
-
     <div class="container">      
       <ul class="nav nav-pills">
           <li><a href="/">Home</a></li>
@@ -32,7 +31,7 @@
           </div>
       <?php endif; ?>
 
-      <?php debug($_SESSION); ?>
+      <?php //debug($_SESSION); ?>
 
       <?=$content?>
 

@@ -41,20 +41,52 @@ class View {
         $this->view = $view;        
     }
 
+    /**
+     * метод сжатия данных
+     */
+    protected function compressPage($buffer){
+       
+        $search = [
+            "/(\n)+/",
+            "/\r\n+/",
+            "/\n(\t)+/",
+            "/\n(\ )+/",
+            "/\>(\n)+</",
+            "/\>\r\n</",
+        ];
+        $replace = [
+            "\n",
+            "\n",
+            "\n",
+            "\n",
+            '><',
+            '><',
+        ];
+        return preg_replace($search, $replace, $buffer);
+    }
+
     public function render($vars) {        
         $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']);       
         if(is_array($vars)){
             extract($vars);
         } 
         $file_view = APP . "/views/{$this->route['prefix']}{$this->route['controller']}/{$this->view}.php";
-        ob_start();//функция буферизации
-        if(is_file($file_view)){           
-            require $file_view;
-        }else{
-            // echo "<p>Не найден вид<b>$file_view</b></p>";
-            throw new \Exception("<p>Не найден вид<b>$file_view</b></p>", 404);
-        }
-        $content = ob_get_clean();//очищает буфер обмена и складывает в $content  
+
+        ob_start([$this, 'compressPage']);// 1 вариант - функция сжатия данных с помощью нашего метода compressPage
+        // ob_start('ob_gzhandler');// 2** вариант - архивация данных с помощью встроенных методов браузера ob_gzhandler
+        {
+            // header("Content-Encoding: gzip");//2** вариант - архивация данных с помощью встроенных методов браузера ob_gzhandler
+            if(is_file($file_view)){           
+                require $file_view;
+            }else{
+                // echo "<p>Не найден вид<b>$file_view</b></p>";
+                throw new \Exception("<p>Не найден вид<b>$file_view</b></p>", 404);
+            }
+    
+            $content = ob_get_contents();
+        }        
+        ob_clean();
+        // $content = ob_get_clean();//очищает буфер обмена и складывает в $content  
         
         if(false !== $this->layout){
             $file_layout = APP . "/views/layouts/{$this->layout}.php";//подключение шаблона
