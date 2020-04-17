@@ -8,11 +8,11 @@ namespace fw\libs;
  */
 class Pagination {
 
-    public $currentPage;
-    public $perpage;
-    public $total;
-    public $countPages;
-    public $uri;
+    public $currentPage; //текущая страница
+    public $perpage; // сколько записей на одной странице
+    public $total; //общее количество записей из БД
+    public $countPages; //общее количество страниц
+    public $uri; //базовый адрес,в который добавляем пагинацию
 
     public function __construct($page, $perpage, $total){
         $this->perpage = $perpage;
@@ -23,15 +23,22 @@ class Pagination {
 
     }
 
+    /**
+     * метод приводит объект к строке
+     */
     public function __toString(){
         return $this->getHtml();
     }
 
+    /**
+     * метод возвращает готовый Html код
+     * формирует строку с пагинацией
+     */
     public function getHtml(){
-        $back = null; //ссылка назад
-        $forward = null; //ссылка вперед
-        $startpage = null; //ссылка в начало
-        $endpage = null; //ссылка в конец
+        $back = null; //ссылка НАЗАД
+        $forward = null; //ссылка ВПЕРЕД
+        $startpage = null; //ссылка в НАЧАЛО
+        $endpage = null; //ссылка в КОНЕЦ
         $page2left = null; //вторая страница слева
         $page1left = null; // первая страница слева
         $page2right = null; // вторая страница справа
@@ -72,20 +79,34 @@ class Pagination {
         return '<ul class="pagination">' . $startpage.$back.$page2left.$page1left.'<li class="active"><a>'.$this->currentPage.'</a></li>'.$page1right.$page2right.$forward.$endpage. '</ul>';
     }
 
+    /**
+     * метод возвращает общее количество страниц = total/perpage, округленное в большую сторону
+     */
     public function getCountPages(){
         return ceil($this->total / $this->perpage) ?: 1;
     }
 
+    /**
+     * метод защищает от недобросовестного пользователя и выдает текущую страницу
+     */
     public function getCurrentPage($page){
         if(!$page || $page < 1) $page = 1;
         if($page > $this->countPages) $page = $this->countPages;
         return $page;
     }
 
+    /**
+     * метод возвращает, с какой записи мы должны начинать выборку((1-1)*2 -> с 0 страницы, (2-1)*2 -> со 2 и т.д.)
+     */
     public function getStart(){
         return ($this->currentPage - 1) * $this->perpage;
     }
 
+    /**
+     * метод вырезает page=2 и возвращает только дополнительные параметры, если они есть
+     * пример: принимает site/category/phones/?page=2&lang=en 
+     * возвращает uri = site/category/phones/?&lang=en
+     */
     public function getParams(){
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
