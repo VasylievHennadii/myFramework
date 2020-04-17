@@ -44,3 +44,11 @@
 -------------
 [2020-04-16 20:58:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
 -------------
+[2020-04-17 16:12:34] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-17 20:40:45] Текст ошибки: Undefined variable: count | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Main\index.php, | Строка: 34
+-------------
+[2020-04-17 20:51:02] Текст ошибки: Undefined property: fw\libs\Pagination::$getCountPages | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Main\index.php, | Строка: 36
+-------------
+[2020-04-17 20:52:47] Текст ошибки: Call to undefined method fw\libs\Pagination::countPages() | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Main\index.php, | Строка: 36
+-------------

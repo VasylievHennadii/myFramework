@@ -104,7 +104,9 @@ class View {
         }        
     }
 
-    //метод ищет скрипты, вырезает скрипты из вида если они есть, и возвращает $content без скриптов
+    /**
+     * метод ищет скрипты, вырезает скрипты из вида если они есть, и возвращает $content без скриптов
+     */    
     protected function getScript($content){
         $pattern = "#<script.*?>.*?</script>#si";
         preg_match_all($pattern, $content, $this->scripts);
@@ -114,14 +116,18 @@ class View {
         return $content;
     }
 
-    //метод будет получать и возвращать метаданные(формирует HTML код)
+    /**
+     * метод будет получать и возвращать метаданные(формирует HTML код)
+     */    
     public static function getMeta(){
         echo '<title>' . self::$meta['title'] . '</title>
         <meta name="description" content="' . self::$meta['desc'] . '">
         <meta name="keywords" content="' . self::$meta['keywords'] . '">';
     }
 
-    //метод будет устанавливать метаданные
+    /**
+     * метод будет устанавливать метаданные
+     */   
     public static function setMeta($title = '', $desc = '', $keywords = ''){
         self::$meta['title'] = $title;
         self::$meta['desc'] = $desc;

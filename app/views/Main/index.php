@@ -11,6 +11,7 @@
         'cache' => 60,
         'cacheKey' => 'menu_select',
     ]); ?>
+
     <!-- <?php new fw\widgets\menu\Menu([
         'tpl' => WWW . '/menu/my_menu.php',        
         'container' => 'ul',
@@ -19,6 +20,7 @@
         'cache' => 60,
         'cacheKey' => 'menu_ul',
     ]); ?> -->
+
     <?php if(!empty($posts)): ?>
         <?php foreach($posts as $post): ?>
             <div class="panel panel-default">
@@ -28,6 +30,12 @@
                 </div>
             </div>
         <?php endforeach; ?>
+        <div class="text-center">
+            <p>Статей: <?=count($posts);?> из <?=$total;?></p>
+            <?php if($pagination->countPages > 1) : ?>
+                <?=$pagination;?>
+            <?php endif ?>
+        </div>
     <?php endif; ?>
 </div>
 <script src="/js/test.js"></script>

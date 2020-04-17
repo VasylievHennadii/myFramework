@@ -7,6 +7,7 @@ use app\models\Main;
 use R;
 use fw\core\App;
 use fw\core\base\View;
+use fw\libs\Pagination;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -25,19 +26,29 @@ class MainController extends AppController{
         
         // create a log channel
         // $log = new Logger('name');
-        $log = new Logger('name');
-        $log->pushHandler(new StreamHandler(ROOT . '/tmp/your.log', Logger::WARNING));
+        // $log = new Logger('name');
+        // $log->pushHandler(new StreamHandler(ROOT . '/tmp/your.log', Logger::WARNING));
 
         // add records to the log
-        $log->warning('Foo');
-        $log->error('Bar');
+        // $log->warning('Foo');
+        // $log->error('Bar');
 
-        $mailer = new PHPMailer();
+        // $mailer = new PHPMailer();
         // var_dump($mailer);
-        
 
-        // R::fancyDebug(true);
         $model = new Main;
+
+        //реализация pagination
+        $total = \R::count('posts');
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $perpage = 1;
+
+        $pagination = new Pagination($page, $perpage, $total);
+        $start = $pagination->getStart();
+
+
+
+
         // echo $test;
         // trigger_error("E_USER_ERROR", E_USER_ERROR);
         
@@ -50,14 +61,13 @@ class MainController extends AppController{
         // }        
         // // App::$app->cache->set('posts', $posts);// кешируется на 1 час по дефолту        
 
-        $posts = \R::findAll('posts');
-        $post = \R::findOne('posts', 'id = 1');
+        $posts = \R::findAll('posts', "LIMIT $start, $perpage");        
         $menu = $this->menu;       
         $title = 'PAGE TITLE';
         // $this->setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');       
         // $meta = $this->meta;
         View::setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
-        $this->set(compact('title', 'posts', 'menu', 'meta'));
+        $this->set(compact('title', 'posts', 'menu', 'meta', 'pagination', 'total'));
     }
 
     public function testAction() {   
