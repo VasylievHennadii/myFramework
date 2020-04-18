@@ -74,3 +74,9 @@
 -------------
 [2020-04-18 23:32:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
 -------------
+[2020-04-19 00:25:10] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-19 00:27:10] Текст ошибки: syntax error, unexpected end of file, expecting variable (T_VARIABLE) or ${ (T_DOLLAR_OPEN_CURLY_BRACES) or {$ (T_CURLY_OPEN) | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\views\Main\index.php, | Строка: 16
+-------------
+[2020-04-19 00:53:55] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------

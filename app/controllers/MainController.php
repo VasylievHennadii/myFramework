@@ -61,13 +61,9 @@ class MainController extends AppController{
         // }        
         // // App::$app->cache->set('posts', $posts);// кешируется на 1 час по дефолту        
 
-        $posts = \R::findAll('posts', "LIMIT $start, $perpage");        
-        $menu = $this->menu;       
-        $title = 'PAGE TITLE';
-        // $this->setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');       
-        // $meta = $this->meta;
-        View::setMeta('Главная страница', 'Описание страницы', 'Ключевые слова');
-        $this->set(compact('title', 'posts', 'menu', 'meta', 'pagination', 'total'));
+        $posts = \R::findAll('posts', "LIMIT $start, $perpage");          
+        View::setMeta('Blog :: Главная страница', 'Описание страницы', 'Ключевые слова');
+        $this->set(compact('title', 'posts', 'pagination', 'total'));
     }
 
     public function testAction() {   
