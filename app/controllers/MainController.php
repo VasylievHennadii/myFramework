@@ -41,7 +41,7 @@ class MainController extends AppController{
         //реализация pagination
         $total = \R::count('posts');
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-        $perpage = 1;
+        $perpage = 2;
 
         $pagination = new Pagination($page, $perpage, $total);
         $start = $pagination->getStart();

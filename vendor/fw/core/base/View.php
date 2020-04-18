@@ -134,6 +134,18 @@ class View {
         self::$meta['keywords'] = $keywords;
     }
 
+    /**
+     * метод включает SIDEBAR
+     */
+    public function getPart($file){
+        $file = APP . "/views/{$file}.php";//подключение шаблона
+        if(is_file($file)){             
+            require_once $file;
+        }else{
+            echo "File {$file} not found...";
+        }
+    }
+
 }
 
 
