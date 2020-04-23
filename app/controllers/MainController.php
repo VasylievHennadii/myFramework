@@ -38,6 +38,7 @@ class MainController extends AppController{
 
         $model = new Main;
 
+
         //реализация pagination
         $total = \R::count('posts');
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
