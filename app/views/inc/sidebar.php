@@ -7,7 +7,12 @@
     'cache' => 60,
     'cacheKey' => 'menu_select',
 ])*/
+
+use fw\widgets\Language\Language;
+
 ?>
+<?php new Language(); ?>
+<br><br>
 <div class="recent">
     <h3>RECENT POSTS</h3>
     <ul>

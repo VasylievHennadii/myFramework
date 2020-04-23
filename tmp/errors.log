@@ -88,3 +88,9 @@
 -------------
 [2020-04-23 23:03:31] Текст ошибки: Call to undefined method fw\core\Registry::setProperty() | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\MainController.php, | Строка: 41
 -------------
+[2020-04-24 00:09:49] Текст ошибки: Class 'fw\core\Language\Language' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\AppController.php, | Строка: 24
+-------------
+[2020-04-24 00:11:13] Текст ошибки: Class 'fw\core\Language\Language' not found | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\AppController.php, | Строка: 24
+-------------
+[2020-04-24 00:38:01] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
