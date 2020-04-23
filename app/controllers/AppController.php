@@ -23,7 +23,7 @@ class AppController extends Controller {
         // $this->menu = \R::findAll('category');
         App::$app->setProperty('langs', Language::getLanguages());
         App::$app->setProperty('lang', Language::getLanguage(App::$app->getProperty('langs')));
-        debug(App::$app->getProperties());
+        // debug(App::$app->getProperties());
     }
 
     /**

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2020 г., 01:01
+-- Время создания: Апр 24 2020 г., 01:30
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -84,8 +84,8 @@ INSERT INTO `categories` (`id`, `title`, `parent`) VALUES
 
 CREATE TABLE `category` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `category`
@@ -98,6 +98,28 @@ INSERT INTO `category` (`id`, `title`) VALUES
 (4, 'Category 3'),
 (5, 'Категория 3'),
 (6, 'Категория 3');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `languages`
+--
+
+CREATE TABLE `languages` (
+  `id` int(11) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `base` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `languages`
+--
+
+INSERT INTO `languages` (`id`, `code`, `title`, `base`) VALUES
+(1, 'ru', 'Русский', 1),
+(2, 'en', 'English', 0),
+(3, 'ua', 'Українська', 0);
 
 -- --------------------------------------------------------
 
@@ -131,14 +153,14 @@ INSERT INTO `pages` (`page_id`, `title`, `alias`, `description`, `keywords`, `te
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL DEFAULT 0,
-  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `title` varchar(255) NOT NULL,
   `date` date NOT NULL,
-  `short_content` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `content` text CHARACTER SET utf8 NOT NULL,
-  `preview` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `author_name` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `short_content` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `preview` varchar(255) NOT NULL,
+  `author_name` varchar(255) NOT NULL,
+  `type` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `posts`
@@ -987,12 +1009,12 @@ INSERT INTO `products` (`id`, `title`, `parent`, `content`, `image`, `price`) VA
 
 CREATE TABLE `user` (
   `id` int(10) UNSIGNED NOT NULL,
-  `login` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `role` enum('user','admin') CHARACTER SET utf8 NOT NULL DEFAULT 'user'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `role` enum('user','admin') NOT NULL DEFAULT 'user'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `user`
@@ -1021,6 +1043,12 @@ ALTER TABLE `categories`
 -- Индексы таблицы `category`
 --
 ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `languages`
+--
+ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1065,6 +1093,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT для таблицы `languages`
+--
+ALTER TABLE `languages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `pages`
