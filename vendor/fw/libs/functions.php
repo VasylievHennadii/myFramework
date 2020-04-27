@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use fw\core\base\Lang;
 
 function debug($arr) {
     echo '<pre>' . print_r($arr, true) . '</pre>';
@@ -16,6 +18,10 @@ function redirect($http = false) {
 
 function h($str){
     return htmlspecialchars($str, ENT_QUOTES);
+}
+
+function __($key){
+    echo Lang::get($key);
 }
 
 

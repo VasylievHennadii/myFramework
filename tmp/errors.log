@@ -144,3 +144,7 @@
 -------------
 [2020-04-26 23:12:15] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
 -------------
+[2020-04-27 11:31:12] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-27 13:01:18] Текст ошибки: Array to string conversion | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\base\Lang.php, | Строка: 20
+-------------

@@ -4,6 +4,11 @@ namespace app\controllers;
 
 use fw\core\App;
 
+/**
+ * контроллер для переключения языков, записывает в куки на неделю для всего сайта
+ * 
+ */
+
 class LanguageController extends AppController {
 
     public function changeAction() {

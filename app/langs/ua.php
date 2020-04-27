@@ -1,9 +1,10 @@
 <?php 
 
 return [
-    'recent_posts' => 'Останні записи',
-    'categories' => 'Категорії',
-    'recent_comments' => 'Останні коментарі',
+    'recent_posts' => 'ОСТАННІ ЗАПИСИ',
+    'categories' => 'КАТЕГОРІЇ',
+    'recent_comments' => 'ОСТАННІ КОМЕНТАРІ',
+    'archives' => 'АРХІВИ',
 ];
 
 

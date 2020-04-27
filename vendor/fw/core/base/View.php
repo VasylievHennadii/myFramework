@@ -2,6 +2,8 @@
 
 namespace fw\core\base;
 
+use fw\core\App;
+
 /**
  * Description of View
  * 
@@ -65,7 +67,8 @@ class View {
         return preg_replace($search, $replace, $buffer);
     }
 
-    public function render($vars) {        
+    public function render($vars) {   
+        Lang::load(App::$app->getProperty('lang'), $this->route);     
         $this->route['prefix'] = str_replace('\\', '/', $this->route['prefix']);       
         if(is_array($vars)){
             extract($vars);
