@@ -51,9 +51,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 </div>
 				  <span class="menu"> </span> 
 				   <ul>
-						<li class="active"><a href="/">HOME</a></li>						
-						<li><a href="about.html">ABOUT</a></li>	
-						<li><a href="contact.html">CONTACT</a></li>						
+						<li class="active"><a href="/"><?php __('home');?></a></li>						
+						<li><a href="about.html"><?php __('about');?></a></li>	
+						<li><a href="contact.html"><?php __('contact');?></a></li>						
 						<div class="clearfix"> </div>
 				 </ul>
 			 </div>
@@ -99,7 +99,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!---->
 <div class="footer">
 	 <div class="container">
-	    <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+	    <p><?php __('copyrights');?><a href="http://w3layouts.com/">W3layouts</a></p>
 	 </div>
 </div>
 
