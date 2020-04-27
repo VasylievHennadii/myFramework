@@ -38,9 +38,10 @@ class MainController extends AppController{
 
         $model = new Main;
 
+        $lang = App::$app->getProperty('lang')['code'];
 
         //реализация pagination
-        $total = \R::count('posts');
+        $total = \R::count('posts', 'lang_code = ?', [$lang]);
         $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
         $perpage = 2;
 
@@ -62,7 +63,7 @@ class MainController extends AppController{
         // }        
         // // App::$app->cache->set('posts', $posts);// кешируется на 1 час по дефолту        
 
-        $posts = \R::findAll('posts', "LIMIT $start, $perpage");          
+        $posts = \R::findAll('posts', "lang_code = ? LIMIT $start, $perpage", [$lang]);          
         View::setMeta('Blog :: Главная страница', 'Описание страницы', 'Ключевые слова');
         $this->set(compact('title', 'posts', 'pagination', 'total'));
     }
