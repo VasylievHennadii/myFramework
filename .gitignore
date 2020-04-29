@@ -1,5 +1,5 @@
-src/node_modules
-node_modules
+public/adminlte
+adminlte
 
 public/adminlte/package-lock.json
 package-lock.json
