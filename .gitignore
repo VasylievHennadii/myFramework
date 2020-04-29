@@ -1,0 +1,11 @@
+src/node_modules
+node_modules
+
+public/adminlte/package-lock.json
+package-lock.json
+
+public/adminlte/yarn.lock
+yarn.lock
+
+public/adminlte/bower.json
+bower.json
