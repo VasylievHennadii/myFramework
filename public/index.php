@@ -13,6 +13,7 @@ define('LIBS', dirname(__DIR__) . '/vendor/fw/libs');
 define('APP', dirname(__DIR__) . '/app');
 define('CACHE', dirname(__DIR__) . '/tmp/cache');
 define('LAYOUT', 'blog');
+define('ADMIN', 'http://myframework/admin');
 
 require '../vendor/fw/libs/functions.php';//подключаем библиотеку функций
 require __DIR__ . '/../vendor/autoload.php';
@@ -37,7 +38,7 @@ Router::add('^page/(?P<alias>[a-z-]+)$', ['controller' => 'Page', 'action' => 'v
  * default routs
  */
 //правила для админской части
-Router::add('^admin$', ['controller' => 'User', 'action' => 'index', 'prefix' => 'admin']);
+Router::add('^admin$', ['controller' => 'Main', 'action' => 'index', 'prefix' => 'admin']);
 Router::add('^admin/?(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$', ['prefix' => 'admin']);
 
 

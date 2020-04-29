@@ -31,8 +31,8 @@ class UserController extends AppController {
     /**
      * метод для test страницы админки
      */
-    public function testAction(){
-        // $this->layout = 'admin';
+    public function loginAction(){
+        $this->layout = 'login';
     }
 }
 
