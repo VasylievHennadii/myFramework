@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 27 2020 г., 23:31
+-- Время создания: Апр 30 2020 г., 14:06
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -1038,7 +1038,8 @@ INSERT INTO `user` (`id`, `login`, `password`, `email`, `name`, `role`) VALUES
 (6, 'user4', '$2y$10$wCxTZpZMqOJIyulNMppOQeO3iyY9hMqGKryhpN5bcWS2ZEZQZJJeu', '4@1.com', 'User4', 'user'),
 (7, 'user5', '$2y$10$in14iW1Q9Zy/DwUNf3tsD.dSeHWh2Xdm7yiHg02gCepRl3DY2WnNu', '5@1.com', 'User5', 'user'),
 (8, 'user6', '$2y$10$taJhl/2lWGMdOlOCEzNjeOF3P1UVYQYuNhTGmN8g/Gc4hPQPlC48e', '6@1.com', 'User6', 'user'),
-(9, 'user7', '$2y$10$VkDzNXw05Cp75T7jBhT67.BLfzjU2aMGWZcm25j5tXSMHO5/fJyDy', '7@1.com', 'User7', 'user');
+(9, 'user7', '$2y$10$VkDzNXw05Cp75T7jBhT67.BLfzjU2aMGWZcm25j5tXSMHO5/fJyDy', '7@1.com', 'User7', 'user'),
+(10, 'admin', '$2y$10$VNWLN3bY5N.ei4Ar5eOXY.4jGN6tKvKtRht8G16053gp3rRMNKULe', 'admin@mail.com', 'Администратор', 'admin');
 
 --
 -- Индексы сохранённых таблиц
@@ -1127,7 +1128,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
