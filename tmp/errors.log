@@ -264,3 +264,47 @@
 -------------
 [2020-04-29 20:34:07] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
 -------------
+[2020-04-29 20:52:47] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:52:59] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:53:18] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:53:24] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:54:12] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:56:13] Текст ошибки: include(404.html): failed to open stream: No such file or directory | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 108
+-------------
+[2020-04-29 20:56:36] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:59:09] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 20:59:47] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:02:35] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:04:01] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:08:10] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:09:52] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:21:09] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:21:29] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-29 21:22:12] Текст ошибки: Контроллер <b>app\controllers\AboutController</b> не найден | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 104
+-------------
+[2020-04-29 21:23:23] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-30 01:27:44] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-30 10:56:18] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------
+[2020-04-30 11:56:30] Текст ошибки: Undefined index: password | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\models\User.php, | Строка: 57
+-------------
+[2020-04-30 11:56:49] Текст ошибки: Undefined index: password | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\models\User.php, | Строка: 57
+-------------
+[2020-04-30 12:27:10] Текст ошибки: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'admin' LIMIT 1 -- keep-cache' at line 1 | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\libs\rb.php, | Строка: 720
+-------------

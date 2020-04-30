@@ -3,6 +3,7 @@
 namespace app\controllers\admin;
 
 use app\controllers\admin\AppController;
+use app\models\User;
 use fw\core\base\View;
 
 class UserController extends AppController {
@@ -31,7 +32,27 @@ class UserController extends AppController {
     /**
      * метод для test страницы админки
      */
-    public function loginAction(){
+    public function loginAction(){        
+        if(!empty($_POST)){
+            $user = new User();
+            if(!$user->login(true)){
+                $_SESSION['error'] = 'Логин/пароль введены неверно!';
+
+            }else{                
+                if(User::isAdmin()){                
+                    redirect(ADMIN);                    
+                }else{
+                    redirect();
+                }
+            }
+            // if(User::isAdmin()){  
+            //     echo 'admin' ;             
+            //     // redirect(ADMIN);                    
+            // }else{
+            //     // redirect();
+            //     echo 'no admin';
+            // }
+        }
         $this->layout = 'login';
     }
 }
