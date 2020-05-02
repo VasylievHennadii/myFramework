@@ -314,3 +314,5 @@
 -------------
 [2020-04-30 17:09:11] Текст ошибки: Undefined variable: login | Файл: C:\OpenServer\OSPanel\domains\myFramework\app\controllers\admin\UserController.php, | Строка: 49
 -------------
+[2020-05-02 19:37:34] Текст ошибки: Страница не найдена | Файл: C:\OpenServer\OSPanel\domains\myFramework\vendor\fw\core\Router.php, | Строка: 109
+-------------

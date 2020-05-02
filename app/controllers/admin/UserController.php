@@ -38,22 +38,13 @@ class UserController extends AppController {
             if(!$user->login(true)){
                 $_SESSION['error'] = 'Логин/пароль введены неверно!';
                 redirect();
-            }else{                
-                if(User::isAdmin()){                
-                    redirect(ADMIN);                    
-                }else{
-                    redirect();
-                }
+            }            
+            
+            if(User::isAdmin()){                              
+                redirect(ADMIN);                    
+            }else{
+                redirect();               
             }
-            // debug($_SESSION['user']['role']);
-            // debug($user);
-            // if(User::isAdmin()){  
-            //     echo 'admin' ;             
-            //     // redirect(ADMIN);                    
-            // }else{
-            //     // redirect();
-            //     echo 'no admin';
-            // }
         }
         $this->layout = 'login';
     }
